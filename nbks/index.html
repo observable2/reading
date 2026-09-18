@@ -66,7 +66,7 @@
     // console.log(paras[config.startingPoint]); // DEBUG , paras, scores
     console.log("--- preprocessing done ---"); // DEBUG
     // --- animation, based on the play() method in observablehq.com/@shadoof/sounding ---
-    const { play } = await import("./data/play.js");
+    const { play } = await import("scoringthespeltair/play.js");
     // console.log("scores:", scores); // DEBUG
     if (config.running) play(config, stageElem, spels, paras, scores);
   </script>

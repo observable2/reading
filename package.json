@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "@observablehq/notebook-kit": "latest"
+    "@observablehq/notebook-kit": "latest",
+    "scoringthespeltair": "github:observable2/scoringthespeltair#v0.0.1"
   },
   "scripts": {
     "preview": "notebooks preview --root nbks --template nbks/custom.tmpl",
