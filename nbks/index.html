@@ -1,6 +1,6 @@
 <!doctype html>
 <notebook theme="air">
-  <title>Reading</title>
+  <title>Untitled</title>
   <script id="2" type="text/markdown" hidden="">
     # Reading
   </script>
@@ -23,7 +23,7 @@
     if (byline) {
       if (window != window.top) {
         console.log("This page is in an iframe");
-        byline.style.opacity = 1;
+        byline.style.opacity = 0; // change to 1 if you want byline to show in iFrame
       } else {
         console.log("This window is top");
         byline.style.opacity = 0;
@@ -61,7 +61,7 @@
     // console.log(paras[config.startingPoint]); // DEBUG , paras, scores
     console.log("--- preprocessing done ---"); // DEBUG
     // --- animation, based on the play() method in observablehq.com/@shadoof/sounding ---
-    const { play } = await import("scoringthespeltair/play.js");
+    const { play } = await import("https://cdn.jsdelivr.net/gh/observable2/scoringthespeltair/play.js");
     // console.log("scores:", scores); // DEBUG
     if (config.running) play(config, stageElem, spels, paras, scores);
   </script>
