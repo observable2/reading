@@ -1,4 +1,4 @@
-import { defaultConfig } from "https://cdn.jsdelivr.net/gh/observable2/scoringthespeltair";
+import { defaultConfig } from "scoringthespeltair";
 
 const heightVw = 50;
 const lineHeight = 2.8;
