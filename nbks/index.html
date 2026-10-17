@@ -1,14 +1,12 @@
 <!doctype html>
-<notebook theme="air">
+<notebook theme="midnight">
   <title>Reading</title>
   <script id="2" type="text/markdown" hidden="">
     # Reading
   </script>
   <script id="1" type="text/html">
-    <div id="frame">
-      <!-- <img class= "rs" src="data/riverSnow/riverSnow.jpg"> -->
-      <div id="stage" class="fade rs"></div>
-    </div>
+    <!-- <img class= "rs" src="data/riverSnow/riverSnow.jpg"> -->
+    <div id="field" class="fade rs"></div>
     <div id="byline">
     <span id="bytext"><cite>Reading</cite> by John Cayley</span>
     </div>
@@ -37,12 +35,12 @@
     // config.startingPoint = 2; // DEBUG when RECORDING & REDUCTING EDIT here
     // config.numParas = 2; // DEBUG and here: number of scores built depends on this
     // config.running = false; // DEBUG
-    var stageElem = document.getElementById("stage");
+    var fieldElem = document.getElementById("field");
     var paraNum, paras, scores, spels;
     // --- preprocessing ---
     console.log("--- preprocessing begins ---"); // DEBUG
     spels = new Map(await FileAttachment("./data/spels.json").json());
-    stageElem.innerHTML = Array.from(spels.values())
+    fieldElem.innerHTML = Array.from(spels.values())
       .map((spel) => spel.html)
       .join("");
     paras = await FileAttachment("./data/paras.json").json();
@@ -60,9 +58,11 @@
     }
     // console.log(paras[config.startingPoint]); // DEBUG , paras, scores
     console.log("--- preprocessing done ---"); // DEBUG
+    const { centerField } = await import("scoringthespeltair");
+    centerField(fieldElem);
     // --- animation, based on the play() method in observablehq.com/@shadoof/sounding ---
     const { play } = await import("scoringthespeltair");
     // console.log("scores:", scores); // DEBUG
-    if (config.running) play(config, stageElem, spels, paras, scores);
+    if (config.running) play(config, fieldElem, spels, paras, scores);
   </script>
 </notebook>
