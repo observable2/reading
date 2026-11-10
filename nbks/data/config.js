@@ -5,8 +5,7 @@ const lineHeight = 2.8;
 const linesPer = Math.floor(heightVw / lineHeight);
 const config = {
   ...defaultConfig,
-  startingPoint: 0,
-  numParas: 1,
+  startPara: 0,
   paraFadeWords: undefined, // undefined, or an array with interger for each para
   // cosmetic
   // "rColumn": 33,

@@ -32,8 +32,7 @@
 
     const { config } = await import("./data/config.js");
     // --- DEBUG congiguration
-    // config.startingPoint = 2; // DEBUG when RECORDING & REDUCTING EDIT here
-    // config.numParas = 2; // DEBUG and here: number of scores built depends on this
+    // config.startPara = 2; // DEBUG when RECORDING & REDUCTING EDIT here
     // config.running = false; // DEBUG
     var fieldElem = document.getElementById("field");
     var paraNum, paras, scores, spels;
@@ -56,7 +55,7 @@
         spel.style.opacity = 1;
       }
     }
-    // console.log(paras[config.startingPoint]); // DEBUG , paras, scores
+    // console.log(paras[config.startPara]); // DEBUG , paras, scores
     console.log("--- preprocessing done ---"); // DEBUG
     const { centerField } = await import("scoringthespeltair");
     centerField(fieldElem);
