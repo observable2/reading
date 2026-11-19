@@ -14,14 +14,15 @@
   <script id="3" type="module">
     console.log("--- Reading, Sept 2026 ---");
 
-    // Wait for the DOM to be ready before querying elements
+    // wait for the DOM before querying elements
     await new Promise(resolve => requestAnimationFrame(resolve));
 
     const byline = document.getElementById("byline");
     if (byline) {
       if (window != window.top) {
         console.log("This page is in an iframe");
-        byline.style.opacity = 0; // change to 1 if you want byline to show in iFrame
+        // change to 1 to show the byline in an iframe
+        byline.style.opacity = 0;
       } else {
         console.log("This window is top");
         byline.style.opacity = 0;
@@ -31,8 +32,8 @@
     }
 
     const { config } = await import("./data/config.js");
-    // --- DEBUG congiguration
-    // config.startPara = 2; // DEBUG when RECORDING & REDUCTING EDIT here
+    // --- DEBUG configuration
+    // config.startPara = 2; // DEBUG: start at a later paragraph
     // config.running = false; // DEBUG
     var fieldElem = document.getElementById("field");
     var paraNum, paras, scores, spels;
@@ -59,7 +60,6 @@
     console.log("--- preprocessing done ---"); // DEBUG
     const { centerField } = await import("scoringthespeltair");
     centerField(fieldElem);
-    // --- animation, based on the play() method in observablehq.com/@shadoof/sounding ---
     const { play } = await import("scoringthespeltair");
     // console.log("scores:", scores); // DEBUG
     if (config.running) play(config, fieldElem, spels, paras, scores);
